@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>    
-    <h2>Total views <%= views %> </h2>
-    This is users page
-    <h1><%= title %></h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Industry </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <% users.forEach(user => { %>
-            <tr>
-                <td><%= user.name %> </td>
-                <td><%= user.industry %> </td>
-                <td>
-                    <button>View Details</button>
-                    <button>Edit</button>
-                </td>
-            </tr>
-            <% })  %>
-        </tbody>
-    </table>
-    
-    
+
+<body>
+    <%- include('../partials/header.ejs') %>
+        <h2>Total views <%= views %>
+        </h2>
+        This is users page
+        <h1>
+            <%= title %>
+        </h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Industry </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user=> { %>
+                    <tr>
+                        <td>
+                            <%= user.name %>
+                        </td>
+                        <td>
+                            <%= user.industry %>
+                        </td>
+                        <td>
+                            <button>View Details</button>
+                            <button>Edit</button>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
 </body>
+
 </html>

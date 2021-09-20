@@ -28,20 +28,18 @@ app.use(express.static('public', {
 
 
 app.use((req, res, next) => {
-    console.log(req.url);    
-    console.log()
     next();
 });
 
-app.get('/users', (req: Request, res: Response) => {  
-    req.session.views = req.session.views ? req.session.views + 1: 1;   
-    console.log(req.session.views);
-    res.render('users', {
-        title: 'MEAN',
-        users,
-        views: req.session.views
-    });
-});
+// app.get('/users', (req: Request, res: Response) => {
+//     req.session.views = req.session.views ? req.session.views + 1 : 1;
+//     console.log(req.session.views);
+//     res.render('users', {
+//         title: 'MEAN',
+//         users,
+//         views: req.session.views
+//     });
+// });
 
 app.use('/api', apiRouter);
 
